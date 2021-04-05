@@ -20,8 +20,7 @@ class Todos extends Component {
                   <td>{todo.id}</td>
                   <td>{todo.title}</td>
                   <td>{todo.completed ? "v" : "x"}</td>
-                  <td><button className="btn btn-sm btn-primary">Edit</button></td>
-                  <td><button className="btn btn-sm btn-danger">Delete</button></td>
+                  <td><button className="btn btn-sm btn-danger" onClick={() => this.props.deleteTodo(index)}>Delete</button></td>
                 </tr>
               ))
             }

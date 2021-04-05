@@ -5,10 +5,10 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      todos: [],
-      task: null,
-      name: null
+      todos: []
     }
+
+    this.deleteTodo = this.deleteTodo.bind(this)
   }
 
   componentDidMount() {
@@ -17,10 +17,20 @@ class App extends React.Component {
       .then((data) => this.setState({ todos: data }))
   }
 
+  deleteTodo = (idx) => {
+    let newTodos = [...this.state.todos]
+
+    newTodos.splice(idx, 1)
+
+    this.setState({
+      todos: newTodos
+    })
+  }
+
   render() {
     return (
       <div className="row pt-3">
-        <Todos todos={this.state.todos} />
+        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
       </div>
     )
   }
