@@ -15,7 +15,7 @@ class Todos extends Component {
           </thead>
           <tbody>
             {
-              this.props.todos.map((todo, index) => (
+              this.props.todos.slice(0, 10).map((todo, index) => (
                 <tr key={index} className={todo.completed ? "table-success" : ""}>
                   <td>{todo.id}</td>
                   <td>{todo.title}</td>

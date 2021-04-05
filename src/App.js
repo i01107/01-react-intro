@@ -1,5 +1,6 @@
 import React from 'react'
 import Todos from './Todos'
+import Footer from './Footer'
 
 class App extends React.Component {
   constructor(props) {
@@ -29,8 +30,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="row pt-3">
-        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
+      <div>
+        <div className="row pt-3">
+          <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
+        </div>
+        <Footer />
       </div>
     )
   }
