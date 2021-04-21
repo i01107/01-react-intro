@@ -15,7 +15,7 @@ class App extends React.Component {
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/todos')
       .then((response) => response.json())
-      .then((data) => this.setState({ todos: data }))
+      .then((data) => this.setState({ todos: data.slice(0, 20) }))
   }
 
   deleteTodo = (idx) => {
@@ -34,7 +34,7 @@ class App extends React.Component {
         <div className="row pt-3">
           <Todos todos={this.state.todos} deleteTodo={this.deleteTodo} />
         </div>
-        <Footer />
+        <Footer author="Fiqi Fitransyah" />
       </div>
     )
   }
